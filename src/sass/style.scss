@@ -1,6 +1,7 @@
-*{
+* {
   box-sizing: border-box;
 }
+
 body {
   background: #6E87A4;
   font-family: 'Roboto', sans-serif;
@@ -15,7 +16,11 @@ body {
   height: 500px;
   margin: 100px auto 0;
   overflow: hidden;
-
+  .notice {
+    padding: 20px;
+    background-color: #ffb725;
+    color: #fff;
+  }
   .header {
     height: 115px;
     background: #89BBF4;
@@ -61,26 +66,26 @@ body {
         top: 50px;
       }
     }
-    .add-new{
+    .add-new {
       z-index: 3;
       background: #FFFFFF;
-      box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.10);
+      box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.10);
       width: 50px;
       height: 50px;
       border-radius: 25px;
       position: absolute;
-      top:33px;
+      top: 33px;
       right: 33px;
       line-height: 0;
       padding: 18px;
       cursor: pointer;
-      transition:all .2s;
-      &:hover{
+      transition: all .2s;
+      &:hover {
         transform: scale(1.2);
         box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.17);
       }
     }
-    .overlay{
+    .overlay {
       background: rgba(0, 0, 0, 0.3);
       position: absolute;
       left: 0;
@@ -89,52 +94,52 @@ body {
       z-index: 2;
     }
   }
-  .body{
+  .body {
     padding: 30px;
-    .list{
-      .item{
+    .list {
+      .item {
         background: #FFFFFF;
-        box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.10);
+        box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.10);
         padding: 15px;
         position: relative;
         margin-bottom: 10px;
         transition: all .2s;
         cursor: pointer;
-        .title{
+        .title {
           font-size: 18px;
           font-weight: 300;
           color: #6F6F6F;
         }
-        &:hover{
+        &:hover {
           box-shadow: 0px 0px 30px 0px rgba(0, 0, 0, 0.17);
         }
-        &:last-child{
+        &:last-child {
           margin-bottom: 0;
         }
-        .show-on-editting{
+        .show-on-editting {
           display: none;
         }
-        .input{
+        .input {
           border: none;
           width: 230px;
           border-bottom: 1px solid #dbdbdb;
-          &:focus{
+          &:focus {
             outline: none;
           }
         }
-        &.editting{
+        &.editting {
           padding-left: 30px;
-          .show-on-editting{
+          .show-on-editting {
             display: inline-block;
           }
-          .hide-on-editting{
+          .hide-on-editting {
             display: none;
           }
-          .tag{
+          .tag {
             width: 20px;
           }
         }
-        .tag{
+        .tag {
           position: absolute;
           height: 60%;
           top: 50%;
@@ -143,29 +148,29 @@ body {
           transform: translateY(-50%);
           cursor: pointer;
         }
-        .color-selector{
-          appearance:none;
+        .color-selector {
+          appearance: none;
           border-radius: 0;
-          border:none;
-          &:focus{
+          border: none;
+          &:focus {
             outline: none;
           }
-          option{
-            appearance:none;
+          option {
+            appearance: none;
             display: block;
             width: 40px;
             height: 40px;
           }
         }
-        .actions{
+        .actions {
           position: absolute;
           top: 50%;
           transform: translateY(-50%);
           right: 18px;
-          div{
+          div {
             cursor: pointer;
-            transition:all .2s;
-            &:hover{
+            transition: all .2s;
+            &:hover {
               transform: scale(1.2);
             }
           }

@@ -2,21 +2,32 @@
 
     var ListStore = {
         state: {
-            items: [
-                {
-                    title: 'Mua sách cho con',
-                    color: '#F5A623'
-                }, {
-                    title: 'Đi chụp ảnh chùa Từ Tân',
-                    color: '#D0021B'
-                }, {
-                    title: 'Gọi điện cho ngoại',
-                    color: '#4A90E2'
-                },
-            ]
+            items: []
         },
         newItem: function (title, color) {
             this.state.items.unshift({title: title, color: color, isNew: true});
+        },
+        isStorageAvailable: function () {
+            try {
+                var storage = window.localStorage,
+                    x = '__storage_test__';
+                storage.setItem(x, x);
+                storage.removeItem(x);
+                return true;
+            }
+            catch (e) {
+                return false;
+            }
+        },
+        load: function () {
+            var dataString = window.localStorage.getItem('task-list');
+            if (dataString) {
+                this.state.items = JSON.parse(dataString);
+            }
+            return true;
+        },
+        push: function () {
+            window.localStorage.setItem('task-list', JSON.stringify(this.state.items));
         }
     };
 
@@ -72,9 +83,13 @@
             save: function () {
                 this.model.isNew = false;
                 this.isEditting = false;
+                ListStore.push();
             },
             done: function () {
                 this.$dispatch('item-deleted', this.model);
+                this.$nextTick(function () {
+                    ListStore.push();
+                });
             }
         }
     });
@@ -103,6 +118,15 @@
                 listState: ListStore.state,
             };
         },
-        template: $('#app-template').html()
+        template: $('#app-template').html(),
+        ready: function () {
+            ListStore.load();
+        },
+        computed: {
+            isStorageAvailable: function () {
+                return ListStore.isStorageAvailable();
+            }
+        }
+
     });
 })(jQuery, Vue, window);
