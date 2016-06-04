@@ -23,9 +23,9 @@
         <div class="tag hide-on-editting" :style="{background:model.color}"></div>
         <select class="color-selector tag show-on-editting" :style="{background:model.color, color:model.color}"
                 v-model="model.color">
-            <option value="#FF5A5A" style="background:#FF5A5A">Important</option>
-            <option value="#ffc62e" style="background:#ffc62e">Normal</option>
-            <option value="#4A90E2" style="background:#4f8274">Whatever</option>
+            <option value="#FF5A5A" style="background:#FF5A5A;color: #FF5A5A !important;">Important</option>
+            <option value="#ffc62e" style="background:#ffc62e; color:#ffc62e !important;">Normal</option>
+            <option value="#4A90E2" style="background:#4f8274; color:#4f8274 !important;">Whatever</option>
         </select>
         <span class="title hide-on-editting" v-text="model.title"></span>
         <input v-model="model.title" class="title input show-on-editting" type="text" @keyup.enter="save">
