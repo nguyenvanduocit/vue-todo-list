@@ -1,0 +1,96 @@
+<html>
+<head>
+    <title>Todo List</title>
+    <link rel="stylesheet" type='text/css' href="./css/style.css">
+    <link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700&subset=latin,vietnamese' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="mountains">
+            <svg width="259px" height="232px" viewBox="-67 5 259 232" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <polygon id="path-1" points="163 50 249 222 77 222"></polygon>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-2">
+                        <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                    </filter>
+                    <polygon id="path-3" points="127 25 213 197 41 197"></polygon>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-4">
+                        <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                    </filter>
+                    <polygon id="path-5" points="86 0 172 172 0 172"></polygon>
+                    <filter x="-50%" y="-50%" width="200%" height="200%" filterUnits="objectBoundingBox" id="filter-6">
+                        <feOffset dx="0" dy="0" in="SourceAlpha" result="shadowOffsetOuter1"></feOffset>
+                        <feGaussianBlur stdDeviation="2.5" in="shadowOffsetOuter1" result="shadowBlurOuter1"></feGaussianBlur>
+                        <feColorMatrix values="0 0 0 0 0   0 0 0 0 0   0 0 0 0 0  0 0 0 0.1 0" type="matrix" in="shadowBlurOuter1"></feColorMatrix>
+                    </filter>
+                </defs>
+                <g id="Group-9" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" transform="translate(-62.000000, 10.000000)">
+                    <g id="Triangle-1-Copy-2">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-2)" xlink:href="#path-1"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-1"></use>
+                    </g>
+                    <g id="Triangle-1-Copy">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-4)" xlink:href="#path-3"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-3"></use>
+                    </g>
+                    <g id="Triangle-1">
+                        <use fill="black" fill-opacity="1" filter="url(#filter-6)" xlink:href="#path-5"></use>
+                        <use fill="#FFFFFF" fill-rule="evenodd" xlink:href="#path-5"></use>
+                    </g>
+                </g>
+            </svg>
+        </div>
+        <div class="stats">
+            <div class="hours">
+                <span class="big">3</span><span class="small">hours</span>
+            </div>
+            <div class="and">
+                <span>&</span>
+            </div>
+            <div class="tasks">
+                <span class="big">5</span><span class="small">Tasks</span>
+            </div>
+        </div>
+        <div class="add-new"><svg width="14px" height="14px" viewBox="18 18 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <polygon id="Shape" stroke="none" fill="#B3D6FF" fill-rule="evenodd" points="32 26 26 26 26 32 24 32 24 26 18 26 18 24 24 24 24 18 26 18 26 24 32 24"></polygon>
+            </svg>
+        </div>
+        <div class="overlay"></div>
+    </div>
+    <div class="body">
+        <div class="list">
+            <div class="item">
+                <div class="tag red"></div>
+                <span class="title">Mua bóng đèn</span>
+                <div class="actions">
+                    <div class="done">
+                        <svg width="18px" height="15px" viewBox="0 -1 18 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <polygon id="Shape" stroke="none" fill="#757575" fill-rule="evenodd" points="5.6 10.6 1.4 6.4 0 7.8 5.6 13.4 17.6 1.4 16.2 -8.8817842e-16"></polygon>
+                        </svg></div>
+                </div>
+            </div>
+            <div class="item editting">
+                <div class="tag red"></div>
+                <span class="title hide-on-editting">Mua bóng đèn</span>
+                <input class="title input show-on-editting" type="text">
+                <div class="actions">
+                    <div class="done">
+                        <svg width="18px" height="15px" viewBox="0 -1 18 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                            <polygon id="Shape" stroke="none" fill="#757575" fill-rule="evenodd" points="5.6 10.6 1.4 6.4 0 7.8 5.6 13.4 17.6 1.4 16.2 -8.8817842e-16"></polygon>
+                        </svg></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="./js/script.js"></script>
+</body>
+</html>
