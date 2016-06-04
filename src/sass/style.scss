@@ -116,16 +116,21 @@ body {
         }
         .input{
           border: none;
+          width: 230px;
           &:focus{
             outline: none;
           }
         }
         &.editting{
+          padding-left: 30px;
           .show-on-editting{
             display: inline-block;
           }
           .hide-on-editting{
             display: none;
+          }
+          .tag{
+            width: 20px;
           }
         }
         .tag{
@@ -136,8 +141,19 @@ body {
           width: 5px;
           transform: translateY(-50%);
           cursor: pointer;
-          &.red{
-            background: #ff2f54;
+        }
+        .color-selector{
+          appearance:none;
+          border-radius: 0;
+          border:none;
+          &:focus{
+            outline: none;
+          }
+          option{
+            appearance:none;
+            display: block;
+            width: 40px;
+            height: 40px;
           }
         }
         .actions{
