@@ -32,7 +32,7 @@ gulp.task('sass', function () {
 var jsFiles = [
     './node_modules/jquery/dist/jquery.js',
     './node_modules/vue/dist/vue.js',
-    './src/js/*.js'
+    './src/js/**.js'
 ];
 gulp.task('js', function () {
     return pipe([

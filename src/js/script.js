@@ -1,6 +1,12 @@
 (function($, Vue, window){
-    var todolist = new Vue({
-        el:'#app',
-        template:$('#app-template').html()
+    var Header = Vue.extend({
+       template:$('#header-template').html()
     });
+var todolist = new Vue({
+    el:'#app',
+    components:{
+        'top-header':Header
+    },
+    template:$('#app-template').html()
+});
 })(jQuery, Vue, window);
