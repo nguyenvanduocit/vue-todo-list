@@ -15,9 +15,9 @@
                 },
             ]
         },
-newItem:function(title, color){
-    this.state.items.unshift({title:title, color:color, isNew:true});
-}
+        newItem: function (title, color) {
+            this.state.items.unshift({title: title, color: color, isNew: true});
+        }
     };
 
     var Header = Vue.extend({
@@ -48,7 +48,7 @@ newItem:function(title, color){
                 var d = new Date();
                 this.hoursRemain = 24 - d.getHours();
             },
-            add:function(){
+            add: function () {
                 ListStore.newItem('Type your task...', '#ffc62e');
             }
         }
@@ -65,7 +65,7 @@ newItem:function(title, color){
         methods: {
             turnEditting: function () {
                 this.isEditting = true;
-                this.$nextTick(function(){
+                this.$nextTick(function () {
                     $(this.$el).find('.input').focus();
                 });
             },
