@@ -14,7 +14,10 @@
                     color: '#4A90E2'
                 },
             ]
-        }
+        },
+newItem:function(title, color){
+    this.state.items.unshift({title:title, color:color, isNew:true});
+}
     };
 
     var Header = Vue.extend({
@@ -41,9 +44,12 @@
             }, 1000);
         },
         methods: {
-            'calculateHoursRemain': function () {
+            calculateHoursRemain: function () {
                 var d = new Date();
                 this.hoursRemain = 24 - d.getHours();
+            },
+            add:function(){
+                ListStore.newItem('Type your task...', '#ffc62e');
             }
         }
     });
@@ -64,6 +70,7 @@
                 });
             },
             save: function () {
+                this.model.isNew = false;
                 this.isEditting = false;
             },
             done: function () {

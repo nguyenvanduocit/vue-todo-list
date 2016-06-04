@@ -18,13 +18,13 @@
 </script>
 
 <script type="text/template" id="item-template">
-    <div class="item" :class="{editting:isEditting}" @dblclick="turnEditting">
+    <div class="item" :class="{editting:isEditting || model.isNew}" @dblclick="turnEditting">
         <div class="tag hide-on-editting" :style="{background:model.color}"></div>
-<select class="color-selector tag show-on-editting" :style="{background:model.color, color:model.color}" v-model="model.color">
-    <option value="#FF5A5A" style="background:#FF5A5A">Important</option>
-    <option value="#ffc62e" style="background:#ffc62e">Normal</option>
-    <option value="#4f8274" style="background:#4f8274">Whatever</option>
-</select>
+    <select class="color-selector tag show-on-editting" :style="{background:model.color, color:model.color}" v-model="model.color">
+        <option value="#FF5A5A" style="background:#FF5A5A">Important</option>
+        <option value="#ffc62e" style="background:#ffc62e">Normal</option>
+        <option value="#4A90E2" style="background:#4f8274">Whatever</option>
+    </select>
         <span class="title hide-on-editting" v-text="model.title"></span>
         <input v-model="model.title" class="title input show-on-editting" type="text" @keyup.enter="save">
         <div class="actions">
@@ -111,11 +111,10 @@
                 <span class="big" v-text="taskRemain"></span><span class="small">Tasks</span>
             </div>
         </div>
-        <div class="add-new">
+        <div class="add-new" @click="add">
             <svg width="14px" height="14px" viewBox="18 18 14 14" version="1.1" xmlns="http://www.w3.org/2000/svg"
                  xmlns:xlink="http://www.w3.org/1999/xlink">
-                <polygon id="Shape" stroke="none" fill="#B3D6FF" fill-rule="evenodd"
-                         points="32 26 26 26 26 32 24 32 24 26 18 26 18 24 24 24 24 18 26 18 26 24 32 24"></polygon>
+                <polygon id="Shape" stroke="none" fill="#B3D6FF" fill-rule="evenodd" points="32 26 26 26 26 32 24 32 24 26 18 26 18 24 24 24 24 18 26 18 26 24 32 24"></polygon>
             </svg>
         </div>
         <div class="overlay" :style="{width:hoursRemainPercent+'%'}"></div>

@@ -117,6 +117,7 @@ body {
         .input{
           border: none;
           width: 230px;
+          border-bottom: 1px solid #dbdbdb;
           &:focus{
             outline: none;
           }
